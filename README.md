@@ -105,4 +105,4 @@ Phase 1 requirements change through issues and reviewed pull requests. Adding, w
 - [Engineering standards](https://github.com/Cretes-lang/.github/blob/main/ENGINEERING.md)
 - [Versioning](https://github.com/Cretes-lang/.github/blob/main/VERSIONING.md)
 
-Initial maintainer: @krishanth7. License: [Apache-2.0](LICENSE).
+License: [Apache-2.0](LICENSE).
