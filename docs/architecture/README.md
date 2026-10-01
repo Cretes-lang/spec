@@ -55,8 +55,13 @@ The original v0.1 scope remains 86 requirements (77 MUST and 9 SHOULD). Async/ne
 ## GitHub tracking
 
 - [Phase 2 acceptance tracker](https://github.com/Cretes-lang/spec/issues/4)
+- [Architecture RFC review](https://github.com/Cretes-lang/rfcs/pull/1)
+- [Initial index publication](https://github.com/Cretes-lang/spec/pull/5)
+- [Complete documentation publication](https://github.com/Cretes-lang/spec/pull/7)
 - [RFC repository and process](https://github.com/Cretes-lang/rfcs)
 - [Phase 1 baseline](../requirements/README.md)
 - [Original open-question register](../PHASE-2-OPEN-QUESTIONS.md)
 
 RFC and proposal pull-request links are recorded in the tracking issue. Keep the issue open until acceptance. Status vocabulary is PROPOSED, ACCEPTED, DEFERRED, REJECTED and SUPERSEDED; implementation status is tracked separately.
+
+Publication status checked 2026-10-01: the RFC proposal was merged as a proposed document. That merge is not an acceptance decision. The acceptance tracker remains the review venue until a dated outcome records the required final-comment period and objection disposition.

@@ -6,9 +6,13 @@ This repository is the designated home for the future normative Cretes specifica
 | --- | --- | --- |
 | Phase 0 — Project foundation and governance | Foundation established; [administrative dependencies tracked](https://github.com/Cretes-lang/.github/blob/main/PHASE_0.md) | Repository scaffold and change-control policy (below) |
 | Phase 1 — Language vision, requirements and design principles | Baseline published | [`docs/`](docs/) — vision, principles, requirements, v0.1 scope, Phase 2 questions |
-| Phase 2 — Architecture | Not started | Decisions through [RFCs](https://github.com/Cretes-lang/rfcs), answering the [open questions](docs/PHASE-2-OPEN-QUESTIONS.md) |
+| Phase 2 — Architecture | Proposed; RFC review pending | [30 architecture records](docs/architecture/README.md), [requirement traceability](docs/architecture/TRACEABILITY.md), [v0.1 blueprint](docs/architecture/V0.1-ARCHITECTURE.md) |
 
 Phase 1 defines **what** Cretes must accomplish. Phase 2 and later phases decide **how**. The Phase 1 documents are requirements. They are not normative language rules and do not define syntax.
+
+## Phase 2 architecture review
+
+The [architecture proposal](docs/architecture/README.md) covers sections 2.1–2.30. All choices remain **PROPOSED**, pending the RFC process and its final-comment period. Publication is not acceptance, implementation or release. [Tracking issue](https://github.com/Cretes-lang/spec/issues/4). Phase 3 has not started.
 
 ## Phase 1 documentation
 
