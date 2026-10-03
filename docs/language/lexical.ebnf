@@ -1,0 +1,26 @@
+(* Character-level notation; special sequences ? ... ? are defined in SPEC.md. *)
+identifier = letter { letter | digit } ;
+letter = ? ASCII A-Z, a-z or underscore ? ;
+digit = ? ASCII 0-9 ? ;
+decimal_digits = digit { [ "_" ] digit } ;
+binary_digits = binary_digit { [ "_" ] binary_digit } ;
+binary_digit = "0" | "1" ;
+octal_digits = octal_digit { [ "_" ] octal_digit } ;
+octal_digit = ? ASCII 0-7 ? ;
+hex_digits = hex_digit { [ "_" ] hex_digit } ;
+hex_digit = ? ASCII 0-9, a-f, A-F ? ;
+integer = decimal_digits | "0b" binary_digits | "0o" octal_digits | "0x" hex_digits ;
+float = decimal_digits ( "." decimal_digits [ exponent ] | exponent ) ;
+exponent = ( "e" | "E" ) [ "+" | "-" ] decimal_digits ;
+string = '"' { string_scalar | escape } '"' ;
+character = "'" ( character_scalar | escape ) "'" ;
+bytes = "b" '"' { byte_scalar | byte_escape } '"' ;
+escape = "\\" ( "n" | "r" | "t" | "0" | "\\" | '"' | "'" | "u" "{" unicode_hex "}" ) ;
+unicode_hex = ? 1-6 hex digits denoting one Unicode scalar ? ;
+byte_escape = "\\" ( "n" | "r" | "t" | "0" | "\\" | '"' | "'" | "x" hex_digit hex_digit ) ;
+string_scalar = ? printable Unicode scalar except double quote and backslash, subject to source security rules ? ;
+character_scalar = ? printable Unicode scalar except single quote and backslash, subject to source security rules ? ;
+byte_scalar = ? ASCII U+0020 through U+007E except double quote and backslash ? ;
+whitespace = " " | ? HT, LF or CRLF ? ;
+line_comment = "//" { ? scalar other than CR or LF ? } ;
+block_comment = "/*" { block_comment | ? scalar not starting /* or */ ? } "*/" ;

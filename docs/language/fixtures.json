@@ -1,0 +1,709 @@
+[
+  {
+    "id": "empty",
+    "source": "",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "comments",
+    "source": "/* outer /* inner */ done */ // eof",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "unit",
+    "source": "fn unit() -> () { return; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "trailing-parameters",
+    "source": "fn pair(x: i64, y: bool,) -> (i64,bool,) { return (x,y,); }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "nested-types",
+    "source": "type Values = Seq[Option[Result[i64, text]]];",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "borrow-return",
+    "source": "fn view(x: &mut i64) -> &mut i64 from x { return x; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "pub-fields",
+    "source": "pub struct S { pub x: i64, }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "import-alias",
+    "source": "module demo::main; import std::io as output; fn main() -> i32 { return 0; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "enum",
+    "source": "enum E { A, B(i64, text), }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "new-in-condition",
+    "source": "fn sample() -> () { if new Flag { yes: true }.yes { return; } }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "else-chain",
+    "source": "fn sample() -> () { if true { } else if false { } else { } }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "patterns",
+    "source": "fn sample() -> () { match value { E::A() => {} E::B(x,y) => {} } }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "wildcard",
+    "source": "fn sample() -> () { match value { _ => {} } }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "unit-tuple",
+    "source": "fn sample() -> () { let a = (); let b = (1,); let c = (1,2); }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "precedence",
+    "source": "fn sample() -> () { let x = 1 + 2 * 3 << 1; let y = true || false && true; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "bitwise",
+    "source": "fn sample() -> () { let x = ~1 & 2 ^ 3 | 4; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "relation",
+    "source": "fn sample() -> () { let a = 1 <= 2; let b = 3 >= 2; let c = 1 != 2; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "chains",
+    "source": "fn sample() -> () { let x = call(1,2,).field[0]?; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "negative-boundary",
+    "source": "fn sample() -> () { let x: i64 = -9223372036854775808; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "numeric-bases",
+    "source": "fn sample() -> () { let a=0b10_01; let b=0o17; let c=0xAb_CD; let d=1_000; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "floats",
+    "source": "fn sample() -> () { let a=1.25e-2; let b=1e+3; let c=1E3; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "literals",
+    "source": "fn sample() -> () { let a=\"é\\u{1F600}\\n\"; let b='界'; let c=b\"A\\xFF\"; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "borrow-deref",
+    "source": "fn sample() -> () { var x=1; let r=&mut x; *r=2; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "loops",
+    "source": "fn sample() -> () { while true { break; } for x in [1,2] { continue; } loop { break; } }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "nested-blocks",
+    "source": "fn sample() -> () { let x=1; { let x=x+1; discard(x,\"shadow\"); } }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "constant",
+    "source": "const C: i64 = 1+2; type I = i64;",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "crlf",
+    "source": "fn f() -> () {\r\nreturn;\r\n}",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "string-comment",
+    "source": "fn sample() -> () { let s=\"/* not a comment */\"; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "escaped-control",
+    "source": "fn sample() -> () { let s=\"\\u{202e}\"; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "keyword-prefix",
+    "source": "fn sample() -> () { let format=1; let variable=2; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "float-dot-member",
+    "source": "fn sample() -> () { let x=1.foo; }",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "utf8-comment",
+    "source": "// Ελληνικά\nfn f() -> () {}",
+    "parse": true,
+    "kind": "syntax-valid",
+    "expectation": ""
+  },
+  {
+    "id": "missing-semicolon",
+    "source": "fn sample() -> () { let x=1 }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "missing-brace",
+    "source": "fn f() -> () {",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "missing-return-type",
+    "source": "fn f() {}",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "keyword-name",
+    "source": "fn sample() -> () { let if=1; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "chained-comparison",
+    "source": "fn sample() -> () { let x=1<2<3; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "chained-equality",
+    "source": "fn sample() -> () { let x=1==2==3; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "assignment-expression",
+    "source": "fn sample() -> () { let x=(a=1); }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "double-assignment",
+    "source": "fn sample() -> () { a=b=c; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unbraced-if",
+    "source": "fn sample() -> () { if true return; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unbraced-while",
+    "source": "fn sample() -> () { while true break; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unsupported-async",
+    "source": "async fn f() -> () {}",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unsupported-await",
+    "source": "fn sample() -> () { await job(); }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unsupported-unsafe",
+    "source": "fn sample() -> () { unsafe { raw(); } }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unsupported-ffi",
+    "source": "extern \"C\" fn f() -> ();",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "generic-function",
+    "source": "fn id[T](x:T) -> T { return x; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "attribute",
+    "source": "@test fn f() -> () {}",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "macro",
+    "source": "fn sample() -> () { print!(\"hi\"); }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bad-record",
+    "source": "struct X { x: i64 }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "record-no-new",
+    "source": "fn sample() -> () { let p=Point {x:1}; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "named-args",
+    "source": "fn sample() -> () { call(x:1); }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "empty-statement",
+    "source": "fn sample() -> () { ; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "uninitialized",
+    "source": "fn sample() -> () { var x: i64; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "top-level-let",
+    "source": "let x=1;",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "import-after-item",
+    "source": "fn f() -> () {} import std::io;",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bad-function",
+    "source": "fn () -> () {}",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "missing-type",
+    "source": "fn f(x:) -> () {}",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bad-type",
+    "source": "type X = Seq[i64;",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "empty-enum",
+    "source": "enum E {}",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "nested-function",
+    "source": "fn sample() -> () { fn inner() -> () {} }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "range",
+    "source": "fn sample() -> () { for n in 0..10 {} }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "trailing-dot",
+    "source": "fn sample() -> () { let n=1.; }",
+    "parse": false,
+    "kind": "syntax-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bad-base",
+    "source": "fn sample() -> () { let x=0b102; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "missing-base",
+    "source": "fn sample() -> () { let x=0x; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bad-separator",
+    "source": "fn sample() -> () { let x=1__0; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "suffix",
+    "source": "fn sample() -> () { let x=12i64; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "exponent",
+    "source": "fn sample() -> () { let x=1e+; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bad-escape",
+    "source": "fn sample() -> () { let x=\"\\q\"; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "surrogate",
+    "source": "fn sample() -> () { let x=\"\\u{D800}\"; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "large-scalar",
+    "source": "fn sample() -> () { let x=\"\\u{110000}\"; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "long-char",
+    "source": "fn sample() -> () { let x='ab'; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "empty-char",
+    "source": "fn sample() -> () { let x=''; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "byte-unicode",
+    "source": "fn sample() -> () { let x=b\"é\"; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bad-byte-escape",
+    "source": "fn sample() -> () { let x=b\"\\x0\"; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "raw-newline",
+    "source": "fn sample() -> () { let x=\"a\nb\"; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unicode-name",
+    "source": "fn sample() -> () { let x=café; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bidi",
+    "source": "fn sample() -> () { let x=\"‮\"; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bom",
+    "source": "fn sample() -> () { let x=﻿; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "bare-cr",
+    "source": "fn sample() -> () { let x=\r; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "internal-name",
+    "source": "fn sample() -> () { let x=__secret; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unclosed-comment",
+    "source": "fn sample() -> () { let x=/* nested /* x */; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "unclosed-string",
+    "source": "fn sample() -> () { let x=\"hello; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "zero-width",
+    "source": "fn sample() -> () { let x=a​b; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "nbsp",
+    "source": "fn sample() -> () { let x=a b; }",
+    "parse": false,
+    "kind": "lexical-invalid",
+    "expectation": ""
+  },
+  {
+    "id": "immutable-write",
+    "source": "fn sample() -> () { let x=1; x=2; }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T001 immutable place"
+  },
+  {
+    "id": "moved-owner",
+    "source": "fn sample() -> () { let x:Seq[i64]=[1]; let y=x; discard(x,\"invalid use\"); }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "B001 use after move"
+  },
+  {
+    "id": "escaping-local",
+    "source": "fn bad() -> &i64 { let x=1; return &x; }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "B002 missing from/escaping local"
+  },
+  {
+    "id": "conflicting-borrow",
+    "source": "fn sample() -> () { var x=1; let r=&x; let m=&mut x; discard(*r,\"still live\"); }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "B002 loan conflict"
+  },
+  {
+    "id": "unused-result",
+    "source": "fn sample() -> () { let result=Result::Err(1); }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T003 unhandled Result plus unresolved result type"
+  },
+  {
+    "id": "non-exhaustive",
+    "source": "fn sample() -> () { match true { false => {} } }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T002 missing true"
+  },
+  {
+    "id": "outside-break",
+    "source": "fn sample() -> () { break; }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "P001 contextual break outside loop"
+  },
+  {
+    "id": "bad-arity",
+    "source": "fn sample() -> () { let x:Option[i64,text]=Option::None(); }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T001 constructor arity"
+  },
+  {
+    "id": "option-propagation",
+    "source": "fn sample() -> () { let x:Option[i64]=Option::None(); let y=x?; }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T001 ? requires Result"
+  },
+  {
+    "id": "constant-io",
+    "source": "const X: i64 = io::read();",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "C001 call not constant"
+  },
+  {
+    "id": "numeric-conversion",
+    "source": "fn sample() -> () { let x:i8=1; let y:i64=x; }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T001 no implicit numeric conversion"
+  },
+  {
+    "id": "borrowed-field",
+    "source": "struct Bad { x: &i64, }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "B002 stored references excluded"
+  },
+  {
+    "id": "bad-provenance",
+    "source": "fn bad(x:i64) -> i64 from x { return x; }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "B002 from only on borrowed returns"
+  },
+  {
+    "id": "unreachable-arm",
+    "source": "fn sample() -> () { match true { _ => {} true => {} } }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T002 unreachable arm"
+  },
+  {
+    "id": "result-discard-reason",
+    "source": "fn sample() -> () { discard(Result::Err(1), \"\"); }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "T003 reason must be non-empty"
+  },
+  {
+    "id": "non-place-borrow",
+    "source": "fn sample() -> () { let r=&(1+2); }",
+    "parse": true,
+    "kind": "semantic-negative",
+    "expectation": "B002 cannot borrow temporary"
+  }
+]
