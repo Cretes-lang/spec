@@ -8,11 +8,19 @@ This repository is the designated home for the future normative Cretes specifica
 | Phase 1 — Language vision, requirements and design principles | Baseline published | [`docs/`](docs/) — vision, principles, requirements, v0.1 scope, Phase 2 questions |
 | Phase 2 — Architecture | Proposed; RFC review pending | [30 architecture records](docs/architecture/README.md), [requirement traceability](docs/architecture/TRACEABILITY.md), [v0.1 blueprint](docs/architecture/V0.1-ARCHITECTURE.md) |
 
+| Phase 3 — Language surface | Draft candidate; acceptance pending | [40 sections, grammar and examples](docs/language/README.md), [traceability](docs/language/TRACEABILITY.md), [validation](docs/language/VALIDATION.md) |
+
 Phase 1 defines **what** Cretes must accomplish. Phase 2 and later phases decide **how**. The Phase 1 documents are requirements. They are not normative language rules and do not define syntax.
 
 ## Phase 2 architecture review
 
-The [architecture proposal](docs/architecture/README.md) covers sections 2.1–2.30. All choices remain **PROPOSED**, pending the RFC process and its final-comment period. Publication is not acceptance, implementation or release. [Tracking issue](https://github.com/Cretes-lang/spec/issues/4). Phase 3 has not started.
+The [architecture proposal](docs/architecture/README.md) covers sections 2.1–2.30. All choices remain **PROPOSED**, pending the RFC process and its final-comment period. Publication is not acceptance, implementation or release. [Tracking issue](https://github.com/Cretes-lang/spec/issues/4). The issue is administratively closed; formal acceptance remains pending in [RFC review](https://github.com/Cretes-lang/rfcs/pull/1).
+
+## Phase 3 language candidate
+
+The [language candidate](docs/language/README.md) addresses sections 3.1–3.40 with proposed syntax, 14 examples, formal grammar, 257 requirement mappings and an isolated experimental recognizer. Read the [completion report](docs/language/COMPLETION.md), [review record](docs/language/REVIEW.md) and [v0.1 acceptance checklist](docs/language/V0.1-SYNTAX.md). [Tracking issue](https://github.com/Cretes-lang/spec/issues/8).
+
+This candidate is **PROPOSED / UNACCEPTED**, not frozen or released. Its syntax and lexical checks do not establish semantic correctness. Architecture and syntax acceptance remain separate governance decisions. Phase 4 and production compiler/runtime implementation have not started.
 
 ## Phase 1 documentation
 
