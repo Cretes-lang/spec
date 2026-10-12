@@ -1,5 +1,7 @@
 # Phase 2 question disposition
 
+> **Decision update (2026-10-10):** Phase 2 architecture accepted as RFC 0001 at content revision `ee09762c5b67edd0ebfe048ffe518f4631f58b10`. [Dated decision](https://github.com/Cretes-lang/rfcs/pull/1#issuecomment-6093106846). Historical proposal wording below records the reviewed rationale; acceptance does not certify implementation or release. Deferred work remains deferred.
+
 The Phase 1 question register is preserved as historical input. None of its questions is marked resolved before RFC acceptance. This table records proposed answers and explicitly deferred details. No grammar work is performed here.
 
 | Question | Architectural response | Current disposition |
@@ -32,3 +34,4 @@ The Phase 1 question register is preserved as historical input. None of its ques
 | [P2Q-026 — Module and package identity](../PHASE-2-OPEN-QUESTIONS.md#p2q-026--module-and-package-identity) | [ARCH-MODULE-001](MODULE.md) | PROPOSED; awaiting RFC acceptance |
 | [P2Q-027 — Syntax design process](../PHASE-2-OPEN-QUESTIONS.md#p2q-027--syntax-design-process) | [ARCH-REVIEW-001](REVIEW.md) | DEFERRED to Phase 3 after acceptance; process documented |
 | [P2Q-028 — Specification method and conformance suite](../PHASE-2-OPEN-QUESTIONS.md#p2q-028--specification-method-and-conformance-suite) | [ARCH-COMPAT-001](COMPAT.md) | PROPOSED specification/conformance method |
+

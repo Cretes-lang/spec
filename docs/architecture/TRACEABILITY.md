@@ -1,5 +1,7 @@
 # Phase 1 to Phase 2 traceability
 
+> **Decision update (2026-10-10):** Phase 2 architecture accepted as RFC 0001 at content revision `ee09762c5b67edd0ebfe048ffe518f4631f58b10`. [Dated decision](https://github.com/Cretes-lang/rfcs/pull/1#issuecomment-6093106846). Historical proposal wording below records the reviewed rationale; acceptance does not certify implementation or release. Deferred work remains deferred.
+
 > Status: PROPOSED responses · Implementation: Not started · Baseline: spec d5f0f2b, with editorial corrections through 36d709e · Date: 2026-09-27
 
 Every one of the 257 Phase 1 requirements appears exactly once below, including all 173 MUST requirements. A row assigns an architectural response and future verification obligation; it does not claim the requirement is implemented or verified. The original milestone remains unchanged. Later-milestone responses constrain foundations without adding features to v0.1.
@@ -319,4 +321,5 @@ All architecture decisions are PROPOSED pending RFC acceptance. Detailed follow-
 | [PLAT-012 — Minimal external runtime dependencies](../requirements/PLATFORMS.md#plat-012--minimal-external-runtime-dependencies) | SHOULD | Post-v0.1 | [ARCH-PLATFORM-001](PLATFORM.md) — Platform architecture; PROPOSED | Platform CI. |
 | [PLAT-013 — Toolchain installation](../requirements/PLATFORMS.md#plat-013--toolchain-installation) | MUST | v0.1 | [ARCH-PLATFORM-001](PLATFORM.md) — Platform architecture; PROPOSED | Inspection; Integration tests. |
 | [PLAT-014 — Consistent toolchain behavior across hosts](../requirements/PLATFORMS.md#plat-014--consistent-toolchain-behavior-across-hosts) | SHOULD | v0.1 | [ARCH-PLATFORM-001](PLATFORM.md) — Platform architecture; PROPOSED | Platform CI. |
+
 
