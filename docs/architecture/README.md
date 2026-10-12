@@ -1,6 +1,8 @@
 # Cretes Phase 2 architecture proposal
 
-> **Overall status: PROPOSED / IN REVIEW. Not accepted or implemented.**
+> **Decision update (2026-10-10):** Phase 2 architecture accepted as RFC 0001 at content revision `ee09762c5b67edd0ebfe048ffe518f4631f58b10`. [Dated decision](https://github.com/Cretes-lang/rfcs/pull/1#issuecomment-6093106846). Historical proposal wording below records the reviewed rationale; acceptance does not certify implementation or release. Deferred work remains deferred.
+
+> **Overall status: ACCEPTED (2026-10-10). Implementation tracked separately.**
 > Date: 2026-09-27. Phase 1 remains the requirements authority. Phase 0 administrative dependencies remain tracked separately.
 
 This directory covers sections 2.1–2.30. Each section is a decision record with requirements, design/rationale, qualitative alternatives, security/performance/developer/implementation consequences and future verification. Filenames use decision-area identifiers; domain documents live here alongside the other architecture boundaries to keep cross-links direct.
@@ -15,36 +17,36 @@ Start with [v0.1 blueprint](V0.1-ARCHITECTURE.md), then [types](TYPE.md), [memor
 
 | Section | Decision | Topic | Status |
 | --- | --- | --- | --- |
-| 2.1 | ARCH-EXEC-001 | [Execution model](EXEC.md) | PROPOSED |
-| 2.2 | ARCH-COMPILER-001 | [Compiler architecture and bootstrapping](COMPILER.md) | PROPOSED |
-| 2.3 | ARCH-PIPELINE-001 | [Compilation pipeline and invariants](PIPELINE.md) | PROPOSED |
-| 2.4 | ARCH-TYPE-001 | [Type and numeric architecture](TYPE.md) | PROPOSED |
-| 2.5 | ARCH-MEM-001 | [Memory-management model](MEM.md) | PROPOSED |
-| 2.6 | ARCH-RESOURCE-001 | [Resource and lifetime management](RESOURCE.md) | PROPOSED |
-| 2.7 | ARCH-SAFETY-001 | [Safety architecture](SAFETY.md) | PROPOSED |
-| 2.8 | ARCH-ERROR-001 | [Error-handling architecture](ERROR.md) | PROPOSED |
-| 2.9 | ARCH-NULL-001 | [Nullability architecture](NULL.md) | PROPOSED |
-| 2.10 | ARCH-IR-001 | [Intermediate representations](IR.md) | PROPOSED |
-| 2.11 | ARCH-BACKEND-001 | [Backend strategy](BACKEND.md) | PROPOSED |
-| 2.12 | ARCH-RUNTIME-001 | [Runtime responsibilities](RUNTIME.md) | PROPOSED |
-| 2.13 | ARCH-CONC-001 | [Concurrency architecture](CONC.md) | PROPOSED |
-| 2.14 | ARCH-ASYNC-001 | [Async and cancellation architecture](ASYNC.md) | PROPOSED |
-| 2.15 | ARCH-MODULE-001 | [Modules and initialization](MODULE.md) | PROPOSED |
-| 2.16 | ARCH-FFI-001 | [FFI and ABI architecture](FFI.md) | PROPOSED |
-| 2.17 | ARCH-PLATFORM-001 | [Platform architecture](PLATFORM.md) | PROPOSED |
-| 2.18 | ARCH-OPT-001 | [Optimization architecture](OPT.md) | PROPOSED |
-| 2.19 | ARCH-SECURITY-001 | [Security and trust architecture](SECURITY.md) | PROPOSED |
-| 2.20 | ARCH-TOOLCHAIN-001 | [Toolchain and developer tools](TOOLCHAIN.md) | PROPOSED |
-| 2.21 | ARCH-BUILD-001 | [Build and package architecture](BUILD.md) | PROPOSED |
-| 2.22 | ARCH-DIAGNOSTIC-001 | [Diagnostics architecture](DIAGNOSTIC.md) | PROPOSED |
-| 2.23 | ARCH-DEBUG-001 | [Debugging and observability](DEBUG.md) | PROPOSED |
-| 2.24 | ARCH-AI-001 | [AI/ML architecture](AI.md) | PROPOSED |
-| 2.25 | ARCH-NET-001 | [Networking architecture](NET.md) | PROPOSED |
-| 2.26 | ARCH-AUTO-001 | [Automation architecture](AUTO.md) | PROPOSED |
-| 2.27 | ARCH-SECURITY-DOMAIN-001 | [Defensive cybersecurity libraries](SECURITY-DOMAIN.md) | PROPOSED |
-| 2.28 | ARCH-COMPAT-001 | [Compatibility and stability](COMPAT.md) | PROPOSED |
-| 2.29 | ARCH-V0.1-ARCHITECTURE-001 | [v0.1 implementation blueprint](V0.1-ARCHITECTURE.md) | PROPOSED |
-| 2.30 | ARCH-REVIEW-001 | [Architecture review and acceptance gates](REVIEW.md) | PROPOSED |
+| 2.1 | ARCH-EXEC-001 | [Execution model](EXEC.md) | ACCEPTED |
+| 2.2 | ARCH-COMPILER-001 | [Compiler architecture and bootstrapping](COMPILER.md) | ACCEPTED |
+| 2.3 | ARCH-PIPELINE-001 | [Compilation pipeline and invariants](PIPELINE.md) | ACCEPTED |
+| 2.4 | ARCH-TYPE-001 | [Type and numeric architecture](TYPE.md) | ACCEPTED |
+| 2.5 | ARCH-MEM-001 | [Memory-management model](MEM.md) | ACCEPTED |
+| 2.6 | ARCH-RESOURCE-001 | [Resource and lifetime management](RESOURCE.md) | ACCEPTED |
+| 2.7 | ARCH-SAFETY-001 | [Safety architecture](SAFETY.md) | ACCEPTED |
+| 2.8 | ARCH-ERROR-001 | [Error-handling architecture](ERROR.md) | ACCEPTED |
+| 2.9 | ARCH-NULL-001 | [Nullability architecture](NULL.md) | ACCEPTED |
+| 2.10 | ARCH-IR-001 | [Intermediate representations](IR.md) | ACCEPTED |
+| 2.11 | ARCH-BACKEND-001 | [Backend strategy](BACKEND.md) | ACCEPTED |
+| 2.12 | ARCH-RUNTIME-001 | [Runtime responsibilities](RUNTIME.md) | ACCEPTED |
+| 2.13 | ARCH-CONC-001 | [Concurrency architecture](CONC.md) | ACCEPTED |
+| 2.14 | ARCH-ASYNC-001 | [Async and cancellation architecture](ASYNC.md) | ACCEPTED |
+| 2.15 | ARCH-MODULE-001 | [Modules and initialization](MODULE.md) | ACCEPTED |
+| 2.16 | ARCH-FFI-001 | [FFI and ABI architecture](FFI.md) | ACCEPTED |
+| 2.17 | ARCH-PLATFORM-001 | [Platform architecture](PLATFORM.md) | ACCEPTED |
+| 2.18 | ARCH-OPT-001 | [Optimization architecture](OPT.md) | ACCEPTED |
+| 2.19 | ARCH-SECURITY-001 | [Security and trust architecture](SECURITY.md) | ACCEPTED |
+| 2.20 | ARCH-TOOLCHAIN-001 | [Toolchain and developer tools](TOOLCHAIN.md) | ACCEPTED |
+| 2.21 | ARCH-BUILD-001 | [Build and package architecture](BUILD.md) | ACCEPTED |
+| 2.22 | ARCH-DIAGNOSTIC-001 | [Diagnostics architecture](DIAGNOSTIC.md) | ACCEPTED |
+| 2.23 | ARCH-DEBUG-001 | [Debugging and observability](DEBUG.md) | ACCEPTED |
+| 2.24 | ARCH-AI-001 | [AI/ML architecture](AI.md) | ACCEPTED |
+| 2.25 | ARCH-NET-001 | [Networking architecture](NET.md) | ACCEPTED |
+| 2.26 | ARCH-AUTO-001 | [Automation architecture](AUTO.md) | ACCEPTED |
+| 2.27 | ARCH-SECURITY-DOMAIN-001 | [Defensive cybersecurity libraries](SECURITY-DOMAIN.md) | ACCEPTED |
+| 2.28 | ARCH-COMPAT-001 | [Compatibility and stability](COMPAT.md) | ACCEPTED |
+| 2.29 | ARCH-V0.1-ARCHITECTURE-001 | [v0.1 implementation blueprint](V0.1-ARCHITECTURE.md) | ACCEPTED |
+| 2.30 | ARCH-REVIEW-001 | [Architecture review and acceptance gates](REVIEW.md) | ACCEPTED |
 
 ## Boundaries and status
 
@@ -65,3 +67,4 @@ The original v0.1 scope remains 86 requirements (77 MUST and 9 SHOULD). Async/ne
 RFC and proposal pull-request links are recorded in the tracking issue. Keep the issue open until acceptance. Status vocabulary is PROPOSED, ACCEPTED, DEFERRED, REJECTED and SUPERSEDED; implementation status is tracked separately.
 
 Publication status checked 2026-10-01: the RFC proposal was merged as a proposed document. That merge is not an acceptance decision. The acceptance tracker remains the review venue until a dated outcome records the required final-comment period and objection disposition.
+

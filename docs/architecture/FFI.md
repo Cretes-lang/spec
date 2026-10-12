@@ -1,6 +1,8 @@
 # 2.16 — FFI and ABI architecture
 
-> Decision: **ARCH-FFI-001** · Status: **PROPOSED** · Implementation: **Not started** · Date: 2026-09-27
+> **Decision update (2026-10-10):** Phase 2 architecture accepted as RFC 0001 at content revision `ee09762c5b67edd0ebfe048ffe518f4631f58b10`. [Dated decision](https://github.com/Cretes-lang/rfcs/pull/1#issuecomment-6093106846). Historical proposal wording below records the reviewed rationale; acceptance does not certify implementation or release. Deferred work remains deferred.
+
+> Decision: **ARCH-FFI-001** · Status: **ACCEPTED** · Implementation: **Not started** · Date: 2026-09-27
 
 [Architecture index](README.md) · [Traceability](TRACEABILITY.md) · [Risks and gates](RISKS.md)
 
@@ -41,3 +43,4 @@ Later test C fixtures for each supported target, null/length mismatches, allocat
 Concrete declaration syntax, binding-tool choice and stable ABI versioning format require later specification; user-facing FFI remains post-v0.1.
 
 Cross-cutting risk owners and closure evidence are in [RISKS.md](RISKS.md). Acceptance requires the [RFC process](https://github.com/Cretes-lang/rfcs); publication or merge of this explicitly proposed document is not acceptance.
+

@@ -1,5 +1,7 @@
 # Evidence and source notes
 
+> **Decision update (2026-10-10):** Phase 2 architecture accepted as RFC 0001 at content revision `ee09762c5b67edd0ebfe048ffe518f4631f58b10`. [Dated decision](https://github.com/Cretes-lang/rfcs/pull/1#issuecomment-6093106846). Historical proposal wording below records the reviewed rationale; acceptance does not certify implementation or release. Deferred work remains deferred.
+
 Sources consulted on 2026-09-27. These are primary project documents used to check feasibility and known tradeoffs. They do not establish measured Cretes performance or prove its proposed safety model. Cretes design choices are inferences from its requirements and the qualitative comparisons, not endorsements by these projects.
 
 | Source | Fact informing review | Cretes consequence |
@@ -16,3 +18,4 @@ Sources consulted on 2026-09-27. These are primary project documents used to che
 | [ONNX Runtime C API](https://onnxruntime.ai/docs/api/c/struct_ort_api.html) | Native inference is accessible through a C API | Library adapters can provide interop without a compiler-integrated ML framework |
 
 No third-party source text or implementation is copied into this proposal. Backend/provider versions are not selected or installed here. Formal API/ABI validation and dependency licensing checks must use the exact version eventually chosen.
+

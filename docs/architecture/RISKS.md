@@ -1,5 +1,7 @@
 # Risks, deferred decisions and release gates
 
+> **Decision update (2026-10-10):** Phase 2 architecture accepted as RFC 0001 at content revision `ee09762c5b67edd0ebfe048ffe518f4631f58b10`. [Dated decision](https://github.com/Cretes-lang/rfcs/pull/1#issuecomment-6093106846). Historical proposal wording below records the reviewed rationale; acceptance does not certify implementation or release. Deferred work remains deferred.
+
 > Status: OPEN review register · Date: 2026-09-27
 
 Ownership of each item is the current project lead until a qualified maintainer explicitly accepts it. This does not imply a staffed compiler or security team. Phase 2 architecture approval and later implementation readiness are separate gates.
@@ -38,3 +40,4 @@ No research spike was executed. The current qualitative proposal does not depend
 - [ ] Accepted statuses and resolved-question links updated after that outcome.
 
 Implementation tests, provider audits and target support tests are later gates, not tests falsely marked passed by this checklist. Phase 3 and production implementation have not started.
+
